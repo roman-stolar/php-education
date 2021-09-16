@@ -4,10 +4,12 @@
 version: '3.1'
 services:
     memcached:
+        container_name: memcached-alpine-container
         image: 'memcached:alpine'
 
     mysql:
         image: 'mysql:5.7'
+        container_name: mysql-5.7-container
         working_dir: /app
         volumes:
             - '.:/app'
@@ -21,6 +23,7 @@ services:
 
     webserver:
         image: 'nginx:alpine'
+        container_name: nginx-alpine-container
         working_dir: /app
         volumes:
             - '.:/app'
@@ -29,6 +32,7 @@ services:
             - '8080:80'
 
     php-fpm:
+        container_name: php74-fpm-container
         build: phpdocker/php-fpm
         working_dir: /app
         volumes:

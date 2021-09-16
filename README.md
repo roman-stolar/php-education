@@ -26,7 +26,7 @@ docker-compose up -d
 
 To get access to the database shell instance in the container, in the separate terminal run:
 ```
-docker exec -it docker-php-nginx-setup_mysql_1 bash
+docker exec -it mysql-5.7-container bash
 ```
 
 Login to mysql account from the bash:
@@ -43,6 +43,10 @@ To quit from the mysql shell, run:
 ```
 quit
 ```
+or
+```
+exit
+```
 
 To quit from the container, run:
 ```
@@ -50,3 +54,4 @@ exit
 ```
 
 Details: https://hub.docker.com/_/mysql
+About configuring nginx - https://nginx.org/ru/docs/http/request_processing.html
