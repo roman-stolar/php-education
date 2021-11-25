@@ -1,2 +1,11 @@
+# Operating systems
+## Mac OS X
+.DS_Store
+## Windows
+Thumbs.db
+
+# Misc
+.buildpath
+.classpath
 /.idea
 /.vscode/settings.json
