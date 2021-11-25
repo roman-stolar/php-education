@@ -7,5 +7,5 @@ Thumbs.db
 # Misc
 .buildpath
 .classpath
-.vscode
-.idea
+/.idea
+/.vscode/settings.json

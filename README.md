@@ -53,5 +53,63 @@ To quit from the container, run:
 exit
 ```
 
+### Additional mysql commands inside mysql shell
+
+Switch to current database
+```
+use custom_db;
+```
+
+Show tables in selected database
+```
+show tables;
+```
+
+Show table properties format
+```
+describe users;
+```
+
 Details: https://hub.docker.com/_/mysql
+
 About configuring nginx - https://nginx.org/ru/docs/http/request_processing.html
+
+### Database users schema
+
+Create table with users before launching the app ( using phpMyAdmin or mysql shell )
+
+CREATE TABLE users (
+    user_id int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    user_firstname varchar(30) NOT NULL,
+    user_lastname varchar(30) NOT NULL,
+    user_email varchar(30) NOT NULL,
+    user_password longtext NOT NULL
+);
+
+INSERT INTO users (user_firstname, user_lastname, user_email, user_password) VALUES ('John', 'Doe', 'mail@mail.com', '$2y$10$4Ut79MYAlpjZiHNrZYhXXeGhnhC.o/j105ChCO/7j8Z6vVnBftlNy');
+
+Hashed password is ** 1111 **
+
+** Table schema: **
+
+| Field | Type | Null | Key | Default | Extra |
+| ------ | ------ | ------ | ------ | ------ | ------ |
+| user_id | int(11) | NO | PRI | NULL | auto_increment |
+| user_firstname | varchar(30) | NO | | NULL |
+| user_lastname  | varchar(30) | NO | | NULL |
+| user_email | varchar(30) | NO | | NULL |
+| user_password | longtext | NO | | NULL |
+
+
+** phpMyAdmin container running on address: **
+```
+http://localhost:8081/
+```
+
+```
+Server: mysql
+User = custom_db_user
+Password = 1111
+```
+
+TODO: implement error rendering and additional data sanitize
