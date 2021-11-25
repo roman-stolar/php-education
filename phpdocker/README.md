@@ -25,7 +25,7 @@ You can access your application via **`localhost`**. Mailhog and nginx both resp
 Service|Address outside containers
 ------|---------|-----------
 Webserver|[localhost:8080](http://localhost:8080)
-MySQL|**host:** `localhost`; **port:** `8082`
+phpMyAdmin|**host:** `localhost`; **port:** `8081`
 
 ## Hosts within your environment ##
 
